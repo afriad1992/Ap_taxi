@@ -1,0 +1,7 @@
+
+if tchats
+  each tchat in tchats
+    div(class="card tchat-element")
+      div(class="card-body")
+        a(class="card-text" href="/tchats/edit/" + tchat._id)= tchat.content
+        button(class="btn btn-danger mt-2 float-right" tchatid=tchat._id) x
