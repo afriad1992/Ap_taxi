@@ -1,0 +1,8 @@
+extends ../layout.pug
+
+block content
+  script(src="/javascripts/tchats/tchats.js") 
+  div(class="d-flex flex-row content mx-auto")
+    include ../includes/profile.pug
+    div(class="flex-fill d-flex flex-column" id="tchat-list-container")
+      include tchat-list.pug
