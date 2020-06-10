@@ -1,0 +1,76 @@
+extends ../layout
+block content
+ nav
+  div(class="nav-wrapper white" style="height:70px !important")
+    a(href="/" class="brand-logo")
+      img( src="/images/Capture.PNG" height="70")
+    ul(id="nav-mobile" class="right hide-on-med-and-down")  
+     li
+      a(style="color:black" class="waves-effect waves-light btn  amber darken-3" href="#") Inscription 
+     li
+      a(style="color:black"  href="/auth/signin/form"  class="waves-effect waves-light btn  amber darken-3") Connexion 
+ .container 
+  div(class="row")
+  div(class="row")
+  div(class="row")
+  div(class="row col s6 offset-m5")
+    form(id="docs" class="card w-50 mt-5" method="post" action="/patient/signupP" )
+      div(class="card-title") Inscription   
+      div(class="card-content")
+       div(class="row")
+        div(class="input-field col s6")
+          i(class="material-icons prefix") account_circle
+          input(placeholder="Placeholder" id="last_name" type="text" class="validate" name="nom" v-model="nom" v-on:blur="verifnom()" )
+          label  Nom
+          span(style="color:red;") 
+        div(class="input-field col s6")
+          i(class="material-icons prefix") account_circle
+          input(placeholder="Placeholder" id="first_name" type="text" class="validate" name="prénom" v-model="nom" v-on:blur="verifnom()" )
+          label Prénom
+          span(style="color:red;") 
+        div(class="input-field col s6")
+          i(class="material-icons prefix") account_circle
+          input(placeholder="Placeholder" id="user_name" type="text" class="validate" name="numero_secu" v-model="nom" v-on:blur="verifnom()" )
+          label Numéro de securité social
+          span(style="color:red;")
+        div(class="input-field col s6")
+          i(class="material-icons prefix") contact_mail
+          input(placeholder="Placeholder" id="mail" type="email" class="validate" name="email" v-model="nom" v-on:blur="verifnom()" )
+          label email
+          span(style="color:red;") 
+        div(class="input-field col s6")
+          i(class="material-icons prefix") lock
+          input(placeholder="Placeholder" id="passe2" type="password" class="validate" name="password" v-model="nom" v-on:blur="verifnom()" )
+          label Mot de passe 
+          span(style="color:red;") 
+        div(class="input-field col s6")
+          i(class="material-icons prefix") lock
+          input(placeholder="Placeholder" id="passe2" type="password" class="validate" name="password2" v-model="nom" v-on:blur="verifnom()" )
+          label confirmez votre mot de passe 
+          span(style="color:red;") 
+        div(class="input-field col s12")
+          i(class="material-icons prefix") call
+          input(placeholder="Placeholder" id="adresse" type="number" class="validate" name="num_tele" v-model="num_tele" v-on:blur="verifnom()" )
+          label Numero de telephone 
+          span(style="color:red;")
+        div(class="input-field col s12")
+          i(class="material-icons prefix") place
+          input(placeholder="Placeholder" id="adresse" type="text" class="validate" name="adresse" v-model="nom" v-on:blur="verifnom()" )
+          label Adresse 
+          span(style="color:red;") 
+        div(class="input-field col s12")
+          i(class="material-icons prefix") place
+          input(placeholder="Placeholder" id="adresse" type="text" class="validate" name="hopital" v-model="nom" v-on:blur="verifnom()" )
+          label hopital 
+          span(style="color:red;") 
+        div(class="input-field col s12")
+          i(class="material-icons prefix") date_range
+          input(placeholder="Placeholder" id="adresse" type="text" class="validate" name="rendez_vous" v-model="nom" v-on:blur="verifnom()" )
+          label Rendez vous
+          span(style="color:red;")   
+        if errors
+          ul(class="my-2")
+            each error in errors
+              li(class="text-danger")= error
+        div(class="w-100")
+          input(type="submit" value="s'inscrire" class="btn btn-large col s4 offset-s4 ml-auto d-block") 
