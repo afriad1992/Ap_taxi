@@ -1,0 +1,18 @@
+doctype html
+html(lang="en")
+head
+  meta(charset="UTF-8")
+  meta(name="viewport", content="width=device-width, initial-scale=1.0")
+  link(rel="stylesheet" href="/css/style.css")    
+  link(rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons")      
+  link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css")
+  script( src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js")
+  script(src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js")
+  script(src="https://unpkg.com/axios/dist/axios.min.js")      
+body
+ div(class="container")
+    div(class="d-flex flex-column align-items-center justify-content-center w-100" style="height:100vh;")
+      h1 GTS Groupement taxi de la somme 
+      div( class="d-flex flex-row")
+        a(class="btn btn-primary nav-link  mx-3" href="/choix") Passagers
+        a(class="btn btn-primary nav-link mx-3 " href="/chauffeurs") Chauffeurs
