@@ -1,0 +1,21 @@
+extends ../layout
+
+block content
+  div(class="d-flex flex-row content mx-auto")
+    include ../includes/profile
+    div(class="flex-fill")
+      form(class="card" method="post"  action= tchat._id ? "/tchats/update/" + tchat._id : "/tchats")
+        div(class="card-header") Écrire un commentaire
+        div(class="card-body")
+          div(class="form-group")
+            textarea(class="form-control" name="content" placeholder="laissez un commentaire")= tchat.content
+          if errors
+            ul(class="my-2")
+              each error in errors
+                li(class="text-danger")=error
+          div(class="w-100")
+            input(type="submit" value="envoyer" class="btn btn-primary ml-auto d-block")
+
+
+
+    
