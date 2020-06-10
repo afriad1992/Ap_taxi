@@ -1,0 +1,25 @@
+nav
+  div(class="nav-wrapper white" style="height:70px !important")
+    a(href="/" class="brand-logo")
+      img( src="/images/Capture.PNG" height="70")
+    ul(id="nav-mobile" class="right hide-on-med-and-down") 
+      if isAuthenticated && chauf 
+        li
+           a(style="color:black" href="/auth/signout") Déconnexion   
+       
+      else if isAuthenticated && chauf==false
+        li
+          a(style="color:black" href="/tchats/new"  class="waves-effect waves-light btn  amber darken-3") Tchat
+        li
+          a(style="color:black" href="/auth/signout"  class="waves-effect waves-light btn  amber darken-3") Déconnexion     
+      else if isAuthenticated==false && chauf==true
+        li
+          a(style="color:black" class="waves-effect waves-light btn  amber darken-3" href="/taxis/signupT/form") Inscription T
+        li
+          a(style="color:black"  href="/auth/signin/form"  class="waves-effect waves-light btn  amber darken-3") Connexion T
+      else if isAuthenticated==false && chauf==false
+        li
+          a(style="color:black" class="waves-effect waves-light btn  amber darken-3" href="/users/signup/form") Inscription 
+        li
+          a(style="color:black"  href="/auth/signin/form"  class="waves-effect waves-light btn  amber darken-3") Connexion 
+        //- 
