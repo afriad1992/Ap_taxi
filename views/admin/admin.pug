@@ -1,0 +1,45 @@
+extends ../layout
+block content
+ nav
+  div(class="nav-wrapper white" style="height:70px !important")
+    a(href="/" class="brand-logo")
+      img( src="/images/Capture.PNG" height="70")
+    ul(id="nav-mobile" class="right hide-on-med-and-down")  
+    
+     li
+      a(style="color:black" href="#"  class="waves-effect waves-light btn  amber darken-3") Déconnexion     
+ .container 
+   div(class="row")
+   div(class="row col s6 offset-m5")
+    div(id="docs" class="card w-50 mt-5" )
+      div
+       img(class="responsive-img circle  col s4 offset-s4 " src="/images/admin.jpg"  height="150em" width="150em") 
+       p(class=" col s4 offset-s4 center" style="font-weight: bold;font-size:30px;") Jerome Dubas    
+      div(class="card-content")
+       div(class="row")
+        a(class="waves-effect waves-light col s12 btn-large" href="/listepatient") listes des courses medical validé
+         i(class="material-icons right") send
+       div(class="row")
+        a(class="waves-effect waves-light col s12 btn-large" href="/listepatient") listes des courses medical non validé
+         i(class="material-icons right") send  
+       div(class="row") 
+       div(class="row")
+        a(class="waves-effect waves-light col s12 btn-large" href="/listepatient") listes des patients
+         i(class="material-icons right") send  
+       div(class="row")   
+        a(class="waves-effect amber darken-3 waves-light col s12 btn-large") listes des courses passagers validés
+         i(class="material-icons right") send
+       div(class="row")  
+        a(class="waves-effect amber darken-3 waves-light col s12 btn-large") listes des courses passagers non validés
+         i(class="material-icons right") send   
+       div(class="row")
+        a(class="waves-effect waves-light green darken-4 col s12 btn-large" href="/listechauffeur") listes des chauffeurs confirmés
+         i(class="material-icons right") send
+       div(class="row")
+        a(class="waves-effect waves-light green darken-4 col s12 btn-large" href="/listechauffeur") listes des chauffeurs non confirmés
+         i(class="material-icons right") send  
+       div(class="row")
+        a(class="waves-effect waves-light  red lighten-1 col s12 btn-large") listes des passagers
+         i(class="material-icons right") send
+         
+        
