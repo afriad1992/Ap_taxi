@@ -4,6 +4,7 @@ const User = require('../database/models/user.model');
 
 exports.createPassager = async (passager) => {
   try {
+    console.log(passager);
     const hashedPassword = await User.hashPassword(passager.password);
     const newUser = new User({ local: {
       email: passager.email,
@@ -12,6 +13,7 @@ exports.createPassager = async (passager) => {
     role:"passager"
     })
     newUser.save();
+
     const newPassager = new Passager({
       _id:newUser._id,
       username: passager.username,

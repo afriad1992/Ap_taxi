@@ -1,76 +1,92 @@
-extends ../layout
-block content
- nav
-  div(class="nav-wrapper white" style="height:70px !important")
+doctype html
+html(lang="en")
+ head
+  meta(charset="UTF-8")
+  meta(name="viewport", content="width=device-width, initial-scale=1.0")
+  link(rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons")      
+  link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css")
+  script( src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js")
+  script(src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js")
+  script(src="https://unpkg.com/axios/dist/axios.min.js")
+  script(src="/socket.io/socket.io.js")
+  script(src="/javascripts/patient.js")
+  script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDIp-f3n9KOEIBvMlADQ6jg0c2hCg4U-s&libraries=places")       
+  script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")      
+  link(rel="stylesheet" href="/css/main.css")
+
+  
+ body(class="aa")
+  
+  nav
+   div(class="nav-wrapper white" style="height:100px !important")
     a(href="/" class="brand-logo")
-      img( src="/images/Capture.PNG" height="70")
+      img( src="/images/Capture.PNG" height="100")
     ul(id="nav-mobile" class="right hide-on-med-and-down")  
      li
-      a(style="color:black" class="waves-effect waves-light btn  amber darken-3" href="#") Inscription 
+      a(style="color:black" class="waves-effect waves-light btn-large  amber darken-3" href="/patient/signupPatient/form") Réserver votre taxi 
      li
-      a(style="color:black"  href="/auth/signin/form"  class="waves-effect waves-light btn  amber darken-3") Connexion 
- .container 
+      a(style="color:black"  href="/document"  class="waves-effect waves-light btn-large  amber darken-3") Document à fournir
+     li
+      a(style="color:black" class="waves-effect waves-light btn-large  amber darken-3" href="/contact") Contact
+ .container
+  
   div(class="row")
   div(class="row")
   div(class="row")
   div(class="row col s6 offset-m5")
-    form(id="docs" class="card w-50 mt-5" method="post" action="/patient/signupP" )
-      div(class="card-title") Inscription   
+    form(id="docs" class="card " method="post" action="/patient/signupP" )
+      div(class="card-title col s4 offset-s5 " style="font-size:3rem;font-weight:bold;" ) Réservation  
+      div(class="row") 
+      div(class="row") 
       div(class="card-content")
        div(class="row")
-        div(class="input-field col s6")
-          i(class="material-icons prefix") account_circle
-          input(placeholder="Placeholder" id="last_name" type="text" class="validate" name="nom" v-model="nom" v-on:blur="verifnom()" )
-          label  Nom
-          span(style="color:red;") 
-        div(class="input-field col s6")
-          i(class="material-icons prefix") account_circle
-          input(placeholder="Placeholder" id="first_name" type="text" class="validate" name="prénom" v-model="nom" v-on:blur="verifnom()" )
-          label Prénom
-          span(style="color:red;") 
-        div(class="input-field col s6")
-          i(class="material-icons prefix") account_circle
-          input(placeholder="Placeholder" id="user_name" type="text" class="validate" name="numero_secu" v-model="nom" v-on:blur="verifnom()" )
-          label Numéro de securité social
+        div(class="input-field col s11")
+          
+          i(class="large material-icons prefix" style="font-size:4rem!important;") account_circle
+          div(class="row")
+          input(class="marge" style="margin-left:6rem !important;" placeholder="numéro de sécurité social" id="user_name" type="number" class="validate" name="numero_secu" v-model="nom" v-on:blur="verifnom()" ) 
+          label(class="marge" style="margin-left:6rem !important;") Numéro de securité social    
           span(style="color:red;")
-        div(class="input-field col s6")
-          i(class="material-icons prefix") contact_mail
-          input(placeholder="Placeholder" id="mail" type="email" class="validate" name="email" v-model="nom" v-on:blur="verifnom()" )
-          label email
+        div(class="input-field col s11")
+          i(class="large material-icons prefix" style="font-size:4rem!important;" ) account_circle
+          div(class="row")
+          input(class="marge" placeholder="Nom" id="last_name" type="text" class="validate" name="nom" v-model="nom" v-on:blur="verifnom()" )
+          label(class="marge")  Nom
           span(style="color:red;") 
-        div(class="input-field col s6")
-          i(class="material-icons prefix") lock
-          input(placeholder="Placeholder" id="passe2" type="password" class="validate" name="password" v-model="nom" v-on:blur="verifnom()" )
-          label Mot de passe 
+        div(class="input-field col s11")
+          i(class="small material-icons prefix" style="font-size:4rem!important;") account_circle
+          div(class="row")
+          input(placeholder="Prénom" id="first_name" type="text" class="validate marge" name="prénom" v-model="nom" v-on:blur="verifnom()" )
+          label(for="first_name" class="marge")  Prénom
           span(style="color:red;") 
-        div(class="input-field col s6")
-          i(class="material-icons prefix") lock
-          input(placeholder="Placeholder" id="passe2" type="password" class="validate" name="password2" v-model="nom" v-on:blur="verifnom()" )
-          label confirmez votre mot de passe 
+        
+        div(class="input-field col s11")
+          i(class="large material-icons prefix" style="font-size:3.5rem!important;") contact_mail
+          div(class="row")
+          input(placeholder="Email" id="mail" type="email" class="validate marge" name="email" v-model="nom" v-on:blur="verifnom()" )
+          label(for="mail" class="marge") Email
           span(style="color:red;") 
-        div(class="input-field col s12")
-          i(class="material-icons prefix") call
-          input(placeholder="Placeholder" id="adresse" type="number" class="validate" name="num_tele" v-model="num_tele" v-on:blur="verifnom()" )
-          label Numero de telephone 
+        div(class="input-field col s11")
+          i(class="large material-icons prefix" style="font-size:4rem!important;") call
+          div(class="row")
+          input(placeholder="numéro de téléphone" id="numtel" type="number" class="validate marge" name="num_tele" v-model="num_tele" v-on:blur="verifnom()" style="top:3rem!important;")
+          label(for="numtel" class="marge")  Numero de telephone 
           span(style="color:red;")
-        div(class="input-field col s12")
-          i(class="material-icons prefix") place
-          input(placeholder="Placeholder" id="adresse" type="text" class="validate" name="adresse" v-model="nom" v-on:blur="verifnom()" )
-          label Adresse 
-          span(style="color:red;") 
-        div(class="input-field col s12")
-          i(class="material-icons prefix") place
-          input(placeholder="Placeholder" id="adresse" type="text" class="validate" name="hopital" v-model="nom" v-on:blur="verifnom()" )
-          label hopital 
-          span(style="color:red;") 
-        div(class="input-field col s12")
-          i(class="material-icons prefix") date_range
-          input(placeholder="Placeholder" id="adresse" type="text" class="validate" name="rendez_vous" v-model="nom" v-on:blur="verifnom()" )
-          label Rendez vous
-          span(style="color:red;")   
-        if errors
-          ul(class="my-2")
-            each error in errors
-              li(class="text-danger")= error
-        div(class="w-100")
-          input(type="submit" value="s'inscrire" class="btn btn-large col s4 offset-s4 ml-auto d-block") 
+        div(id="output" class="col s12 result-table")
+        div(class="col s12")
+          button(class="btn btn-large col s4 offset-s1 ml-auto d-block" id="test" type="button" onclick="planifier();") planifier votre  trajet
+          button(class="btn btn-large col s4 offset-s2 ml-auto d-block" id="testt" type="button" onclick="immediate();")  trajet immediate
+        div(class="input-field col s11" id="depart")
+        div(class="input-field col s11" id="arrivee")
+        div(id="date")
+        div(id="heure")
+        div(id="button")
+        div(class="container-map" id="google-map" )
+        div(id="clarifier")
+        div(id="submit")
+         
+                          
+        
+ 
+ 
+       

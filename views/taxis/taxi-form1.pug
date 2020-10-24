@@ -1,25 +1,23 @@
 extends ../layout
 block content
  nav
-  div(class="nav-wrapper white" style="height:100px !important")
+  div(class="nav-wrapper white" style="height:70px !important")
     a(href="/" class="brand-logo")
-      img( src="/images/Capture.PNG" height="100")
+      img( src="/images/Capture.PNG" height="70")
     ul(id="nav-mobile" class="right hide-on-med-and-down")  
      li
-      a(style="color:black" class="waves-effect waves-light btn-large  amber darken-3" href="users/signup/form") Inscription 
+      a(style="color:black" class="waves-effect waves-light btn  amber darken-3" href="#") Inscription 
      li
-      a(style="color:black"  href="/auth/signin/form"  class="waves-effect waves-light btn-large  amber darken-3") Connexion 
- .container
+      a(style="color:black"  href="/auth/signin/form"  class="waves-effect waves-light btn  amber darken-3") Connexion 
+ .container 
   div(class="row")
   div(class="row")
   div(class="row")
-  div(class="row col s4 offset-m5" style="position:relative,bottom:20px")
-    form(id="docs" class="card w-50 mt-5" method="post" action="/taxis/signupT" style="position:relative,top:20px" )
-      div(class="card-title center" style="font-size:3em") Inscription   
+   div(class="row " style="position:relative,bottom:20px")
+    form(id="docs" class="card w-50 mt-5" method="post" action="/taxis/signupT" enctype="multipart/form-data" style="position:relative,top:20px" )
+     div(class="card-title") Inscription   
       div(class="card-content")
        div(class="row")
-        
-          
         div(class="input-field col s6")
           div(class="row")
           i(class="material-icons prefix") account_circle
@@ -62,25 +60,18 @@ block content
           input(placeholder="confirmez votre mot de passe" id="passe2" type="password" class="validate" name="password2" v-model="nom" v-on:blur="verifnom()" )
           label confirmez votre mot de passe 
           span(style="color:red;") 
-        div(class='row')  
-        
-       
-         
-        div(class="file-field input-field col s6   ")
-          div(class="btn amber darken-3 col s9 offset-s2" style="color:black;")
-           label(for="carteIT" style="color:black;font-size:1em; ") telecharger votre carte d'identé
+        div(class="file-field input-field col s6  ")
+          div(class="btn amber darken-3" style="color:black;")
+           label(for="carteIT" style="color:black;font-size:1em; ") telecharger votre carte d'identé)
            input(type="file" name="carteI" id="carteIT" )
            span(style="color:red;") 
         div(class="file-field input-field col s6 ")
          
-          div(class="btn amber darken-3 col s9 offset-s2 " )
+          div(class="btn amber darken-3 col s9" )
            label(for="licenceT" style="color:black;font-size:1em;") telecharger votre licence
            input(type="file" name="licence" id="licenceT" )
-           span(style="color:red;")
-        div(class='row')
-        div(class='row')
+           span(style="color:red;")        
         if errors
-
           ul(class="my-2")
             each error in errors
               li(class="text-danger")= error

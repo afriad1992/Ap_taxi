@@ -5,20 +5,19 @@ const schema = mongoose.Schema;
 const userSchema = schema({
   local: {
     email: {
+
       type: String,
-      unique: true,
-      maxlength: [54, "email trop long"],
-      minlength: [8, "email trop court"],
-      required: [true, "Champ requis"],
+      minlength: [8, "email trop court"]
+      // required: [true, "Champ requis"],
     },
-    password: { type: String, unique: true, required: true },
+    password: { type: String, required: true },
   },
   role: {
     type: String,
    
     maxlength: [15, "username trop long"],
-    minlength: [1, "username trop court"],
-    required: [true, "Champ requis"],
+    minlength: [1, "username trop court"]
+    // required: [true, "Champ requis"],
   },
  
 });

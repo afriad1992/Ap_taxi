@@ -12,6 +12,8 @@ html(lang="en")
 
   
  body
+  script(src="/socket.io/socket.io.js")
+ 
   nav
    div(class="nav-wrapper white" style="height:70px !important")
     a(href="/" class="brand-logo")
@@ -23,38 +25,51 @@ html(lang="en")
   .container 
    div(class="row")
    div(class="row col s6 offset-m5")  
-    form(id="docs" class="card w-50 mt-5" method="post" action="/malade/course" )
+    form(id="docs" class="card w-50 mt-5" method="post" action="/course" )
       div
        img(class="responsive-img circle  col s4 offset-s4" src="/images/passagers.jpg"  height="150em" width="150em") 
-       p(class=" col s4 offset-s4 center" style="font-weight:bold;font-size:20px;") #{users}   
+       p(class=" col s4 offset-s4 center" style="font-weight:bold;font-size:20px;")= users.nom   
       div(class="card-content")
        div(class="row")
+        input( type="hidden"  name="idp" value=users._id )
+        input( type="hidden"  name="idc" value="")
         div(class="input-field col s12")
           i(class="material-icons prefix") place
-          input(placeholder="Placeholder" id="location" type="text" class="validate" name="adresse" v-model="nom" v-on:blur="verifnom()" )
+          input(placeholder="point de depart" id="location" type="text" class="validate" name="adresse" v-model="nom" v-on:blur="verifnom()" )
           label point de depart 
           span(style="color:red;") 
         div(class="input-field col s12")
           i(class="material-icons prefix") place
-          input(placeholder="Placeholder" id="location-2" type="text" class="validate" name="adresse1" v-model="nom" v-on:blur="verifnom()" )
+          input(placeholder="point d'arrivée" id="location-2" type="text" class="validate" name="adresse1" v-model="nom" v-on:blur="verifnom()" )
           label point d'arrivée 
           span(style="color:red;") 
-        div(class="input-field col s12")
+        div(id="date")
+        div(id="heure")
+        div(id="button1")
+        div(id="button2")
+        //- div(class="input-field col s6")
           i(class="material-icons prefix") date_range
-          input(placeholder="Placeholder" id="adresse" type="text" class="validate" name="adresse1" v-model="nom" v-on:blur="verifnom()" )
-          label Rendez vous
+          input(placeholder="Placeholder" id="adresse" type="date"  min="2020-05-01" max="2022-12-31" class="validate" name="adresse1" v-model="nom" v-on:blur="verifnom()" )
+          span(style="color:red;")
+        //- div(class="input-field col s6")
+          i(class="material-icons prefix") access_time
+          input(placeholder="heure" id="heure" type="time"  min="2020-05-01" max="2022-12-31" class="validate" name="adresse1" v-model="nom" v-on:blur="verifnom()" )
           span(style="color:red;")
         //- div(class="w-100 col s12")
           input(type="submit" value="valider" class="btn btn-large col s4 offset-s4 ml-auto d-block") 
       
-        
         div(class="col s12")
+          button(class="btn btn-large col s4 offset-s1 ml-auto d-block" id="test" type="button" onclick="planifier();") planifier votre  trajet
+          button(class="btn btn-large col s4 offset-s2 ml-auto d-block" id="testt" type="button" onclick="immediate();")  trajet immediate
+        //- div(class="col s12")
           button(class="button" type="button" onclick="clearRoute();") changer le trajet
           button(class="button" type="button" onclick="calcRoute();") Detail du trajet
-        div(id="output" class="col s12 result-table") 
+        div(id="planifier" class="col s12 result-table")
+          
+        div(id="output" class="col s12 result-table")   
         div(class="row")  
         div(class="row")     
-        div(class="container-map" id="google-map")           
+        div(class="container-map" id="google-map" style="height:,width:")           
  script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDIp-f3n9KOEIBvMlADQ6jg0c2hCg4U-s&libraries=places")
  script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
  script(src="/javascripts/main.js")                          

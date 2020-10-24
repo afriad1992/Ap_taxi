@@ -1,15 +1,6 @@
 extends ../layout
 
 block content
-  nav
-  div(class="nav-wrapper white" style="height:70px !important")
-    a(href="/" class="brand-logo")
-      img( src="/images/Capture.PNG" height="70")
-    ul(id="nav-mobile" class="right hide-on-med-and-down")  
-     li
-      a(style="color:black" class="waves-effect waves-light btn  amber darken-3" href="#") Inscription 
-     li
-      a(style="color:black"  href="/auth/signin/form"  class="waves-effect waves-light btn  amber darken-3") Connexion 
   div(class="row")
   div(class="row col s6 offset-m5")
     form(id="docs" class="card w-50 mt-5" method="post" action="/taxis/signupT" )

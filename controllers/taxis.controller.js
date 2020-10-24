@@ -18,7 +18,12 @@ exports.signupFormT = (req, res, next) => {
 }
 
 exports.signupT = async (req, res, next) => {
+ 
   const body = req.body;
+  console.log("aaAAA");
+  console.log(body);
+  console.log("aaaaa");
+
   try {
     const taxi = await createTaxi(body);
     res.redirect('/');

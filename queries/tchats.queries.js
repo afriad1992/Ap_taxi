@@ -8,7 +8,7 @@ exports.createTchat = (tchat) => {// on va recupérer en parametre contenu de tc
   const newTchat = new Tchat(tchat);
   return newTchat.save();
 }
-exports.deleteTchat = (tchatId) => {
+exports.deletMessage = (tchatId) => {
     return Tchat.findByIdAndDelete(tchatId).exec();
 }
 exports.getTchat = (tchatId)=>{

@@ -1,0 +1,81 @@
+extends ../layout
+block content
+ 
+ nav
+  div(class="nav-wrapper white" style="height:100px !important;")
+    a(href="/" class="brand-logo")
+      img( src="/images/Capture.PNG" height="100")
+    ul(id="nav-mobile" class="right hide-on-med-and-down")  
+     li
+      a(style="color:black" class="waves-effect waves-light btn-large  amber darken-3" href="/patient/signupPatient/form") Réserver votre taxi 
+     li
+      a(style="color:black"  href="/document"  class="waves-effect waves-light btn-large  amber darken-3") Document à fournir
+     li
+      a(style="color:black" class="waves-effect waves-light btn-large  amber darken-3" href="/patient/signupPatient/form") Contact
+     
+ div(class="row" style="background:white;")
+  
+  div(class="row") 
+  div(class="row")               
+  div(class="col s4 offset-s4" style="text-align: center;color:white;background:#FF5733 ;height:120px;border-radius:20px;font-size:30px;") +33 6 52 68 01 06
+   i(class=" large material-icons left ") call
+   div(style="text-decoration: underline;font-size:25px;text-align: center")  Numéro non surtaxé   
+ div(class="aa")
+  div(class="row")
+  div(class="row")
+  div(class="row")
+
+  div(class="row" )
+   div(class="container col s10 offset-s1 " style="background-color:white;color:black;float: left;z-index:0;border-radius:20px;padding:3rem" ) 
+    form(id="docs" class="card " method="post" action="/patient/signupP" )
+      div(class="card-title col s4 offset-s5 " style="font-size:3rem;font-weight:bold;" ) Contact 
+      div(class="row") 
+      div(class="row") 
+      div(class="card-content")
+       div(class="row")
+        //- div(class="input-field col s11" )
+          div(class="row")
+          select(style="background-color: brown;")
+           option(value="" disabled selected) Choose your option
+           option(value="homme") homme
+           option(value="femme") femme
+          label Civilité
+          div(class="row")
+          div(class="row")
+          div(class="row")
+          div(class="row")
+        div(class="input-field col s11")
+          i(class="large material-icons prefix" style="font-size:4rem!important;" ) account_circle
+          div(class="row")
+          input(class="marge" placeholder="Nom" id="last_name" type="text" class="validate" name="nom" v-model="nom" v-on:blur="verifnom()" )
+          label(class="marge")  Nom
+          span(style="color:red;") 
+        div(class="input-field col s11")
+          i(class="small material-icons prefix" style="font-size:4rem!important;") account_circle
+          div(class="row")
+          input(placeholder="Prénom" id="first_name" type="text" class="validate marge" name="prénom" v-model="nom" v-on:blur="verifnom()" )
+          label(for="first_name" class="marge")  Prénom
+          span(style="color:red;") 
+        
+        div(class="input-field col s11")
+          i(class="large material-icons prefix" style="font-size:3.5rem!important;") contact_mail
+          div(class="row")
+          input(placeholder="Email" id="mail" type="email" class="validate marge" name="email" v-model="nom" v-on:blur="verifnom()" )
+          label(for="mail" class="marge") Email
+          span(style="color:red;") 
+        div(class="input-field col s11")
+          i(class="large material-icons prefix" style="font-size:3.5rem!important;") mode_edit
+          div(class="row")
+          div(class="row")
+          div(class="row")
+          textarea( id="mail" type="email" class="validate marge" name="email" rows="20" cols="50" v-model="nom" v-on:blur="verifnom()" )
+          label(for="mail" class="marge") Commentaire
+          span(style="color:red;")
+        div(class=" col s12")  
+          input(type="submit" value="envoyer" class="col s4 offset-s4 btn  btn-large") 
+        //- div(class="input-field col s11")
+          div(class="row")
+          i(class="large material-icons prefix" style="font-size:3.5rem!important;") mode_edit
+          input(placeholder="Email" id="mail" type="email" class="validate marge" name="email"  v-model="nom" v-on:blur="verifnom()" )
+          label(for="textarea1 " class="marge") Commentaire
+          span(style="color:red;") 

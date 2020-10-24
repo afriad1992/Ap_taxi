@@ -20,13 +20,15 @@ block content
        div(class="row")
         
         div(class="input-field col s12")
+          div(class="row")
           i(class="material-icons prefix") contact_mail
           input(placeholder="Placeholder" id="mail" type="email" class="validate" name="email" v-model="nom" v-on:blur="verifnom()" )
           label  email
           span(style="color:red;")
         div(class="input-field col s12")
+          div(class="row")
           i(class="material-icons prefix") lock
-          input(placeholder="Placeholder" id="passe2" type="password" class="validate" name="password" v-model="nom" v-on:blur="verifnom()" )
+          input(placeholder="Placeholder" id="passe2" type="password" class="  validate" name="password" v-model="nom" v-on:blur="verifnom()" )
           label Mot de passe 
           span(style="color:red;") 
                

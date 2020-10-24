@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 const schema = mongoose.Schema;
-
+//type:mongoose.Types.ObjectId,ref:"taxi"
 const patient = schema({
-  
+  id_chauffeur:{type:String},
   
   nom : {
     type: String 
@@ -21,11 +21,14 @@ const patient = schema({
   email: {
     type: String
   },
-  rendez_vous: {
+  date: {
     type: String },
- numeroSecurite :{type: Number}  ,
+ numeroSecurite :{type: Number},
 
-  
+ heure: {
+  type: String },
+  imediate: {
+    type: Boolean },
   
 });
 

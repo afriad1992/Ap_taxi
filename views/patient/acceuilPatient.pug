@@ -1,0 +1,41 @@
+extends ../layout
+block content
+ 
+ nav
+  div(class="nav-wrapper white" style="height:100px !important;")
+    a(href="/" class="brand-logo")
+      img( src="/images/Capture.PNG" height="100")
+    ul(id="nav-mobile" class="right hide-on-med-and-down")  
+     li
+      a(style="color:black" class="waves-effect waves-light btn-large  amber darken-3" href="/patient/signupPatient/form") Réserver votre taxi 
+     li
+      a(style="color:black"  href="/document"  class="waves-effect waves-light btn-large  amber darken-3") Document à fournir
+     li
+      a(style="color:black" class="waves-effect waves-light btn-large  amber darken-3" href="/contact") Contact
+     
+ div(class="row" style="background:white;")
+  
+  div(class="row") 
+  div(class="row")               
+  div(class="col s4 offset-s4" style="text-align: center;color:white;background:#FF5733 ;height:120px;border-radius:20px;font-size:30px;") +33 6 52 68 01 06
+   i(class=" large material-icons left ") call
+   div(style="text-decoration: underline;font-size:25px;text-align: center")  Numéro non surtaxé   
+ div(class="aa")
+  div(class="row")
+  div(class="row")
+  div(class="row")
+
+  div(class="row" )
+   div(class="container col s10 offset-s1 " style="background-color:white;color:black;float: left;z-index:0;border-radius:20px;padding:3rem" ) 
+    h2 Bienvenue sur le réseau JD Taxi le meilleur choix pour vos courses médicales
+  
+    p(style="font-size:25px;") Réservez en ligne ou par téléphone votre taxi conventionné. Nous prenons en charge votre transport conventionné par la CPAM, de votre lieu de résidence en aller simple ou aller/retour vers :
+    div(class="row ")
+       ul(class="col s3 offset-s2" style="font-size:25px;list-style-type: square;")
+         li(style="list-style-type: square;") Consultations
+         li(style="list-style-type: square;") Hopitaux
+         li(style="list-style-type: square;") Cliniques
+         li(style="list-style-type: square;") CMPP / CAMSP
+         li(style="list-style-type: square;") Dialyses
+         li(style="list-style-type: square;") .....
+    p(style="font-size:25px;") Bon à savoir : Vous pouvez bénéficier du tiers payant : vous n’avancez ainsi pas les frais. Vous ne payez pas le taxi (transport taxi conventionné gratuit pour vous, la caisse primaire d’assurance maladie assurant la prise en charge de la prestation) 

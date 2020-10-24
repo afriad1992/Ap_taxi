@@ -14,9 +14,11 @@ const taxis = require("./taxis.routes");
 const auth = require("./auth.routes");
 const autht = require("./autht.routes");
 const patients = require("./patient.routes");
+const course = require("./course.routes");
 const Tchat = require("../database/models/tchat.model"); // appel fichier schema de model mongoose
 
 router.use("/tchats", ensureAuthenticated, tchats);
+router.use("/course", course);
 router.use("/users", users);
 router.use("/auth", auth);
 router.use("/taxis", taxis);
@@ -31,21 +33,20 @@ router.get("/choix", (req, res) => {
 });
 
   router.get("/login", (req, res) => {
+    
     if(req.user.role=="chauffeur")
-     {const id=req.user._id;
+     {
+      console.log("ana hona");
+      const id=req.user._id;
       console.log(id);
       Taxi.findById(id).exec()
-      .then( docs=>res.render("course/course-formCH",{users:docs.nom})
+      .then( docs=>res.render("course/course-formCH",{users:docs})
        // res.render("course/course-formM")
         )
       .catch(err=>console.log(err));
-      //res.render("course/course-formM")
-      
+      console.log("mazal mazal mazal");
+      //res.render("course/course-formM")  
 }
-       //const Chauffeur =  findTaxiPerId(id);
-      // console.log(chauffeur);
-    
-    
      else if(req.user.role=="patient")
      {const id=req.user._id;
       console.log(id);
@@ -60,7 +61,7 @@ router.get("/choix", (req, res) => {
      {const id=req.user._id;
       console.log(id);
       Passager.findById(id).exec()
-      .then( docs=>res.render("course/course-formP",{users:docs.nom})
+      .then( docs=>res.render("course/course-formP",{users:docs})
        // res.render("course/course-formM")
         )
       .catch(err=>console.log(err));}
@@ -70,14 +71,21 @@ router.get("/tchat/new", (req, res) => {
   res.render("tchats/tchat-form",{chauffeur:true});
 });
 router.get("/passagers", (req, res) => {
-  res.render("users/user-form",{chauffeur:false});
+  res.render("users/userAccueil",{chauffeur:false});
 });
 router.get("/chauffeurs", (req, res) => {
-  res.render("taxis/taxi-form",{chauffeur:true});
+  res.render("taxis/taxi-accueil",{chauffeur:true});
 });
 router.get("/patient", (req, res) => {
-  res.render("patient/patient-form",{chauffeur:true});
+  res.render("patient/acceuilPatient",{chauffeur:true});
 });
+router.get("/document", (req, res) => {
+  res.render("patient/document",{chauffeur:true});
+});
+router.get("/contact", (req, res) => {
+  res.render("patient/Contact",{chauffeur:true});
+});
+
 
 /*router.get('/complements',(req,res)=>{
     res.render('taxis/complements');

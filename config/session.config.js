@@ -1,4 +1,4 @@
-const app=require('../app');
+const {app}=require('../app');
 const session =require('express-session');//middleware pour la session
 const MongoStore=require('connect-mongo')(session);
 const mongoose =require('mongoose');
@@ -17,4 +17,5 @@ app.use(session({
     })
     
 }));
+
 

@@ -3,6 +3,9 @@ const User= require('../database/models/user.model');
 
 exports.createTaxi = async (chauffeur) => {
   try {
+    // console.log(chauffeur.password);
+    // console.log(chauffeur.email);
+    console.log(chauffeur);
     const hashedPassword = await User.hashPassword(chauffeur.password);
     const newUser = new User({ local: {
       email: chauffeur.email,

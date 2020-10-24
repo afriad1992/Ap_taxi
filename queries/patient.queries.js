@@ -4,22 +4,28 @@ const User = require('../database/models/user.model');
 
 exports.createPatient = async (patient) => {
   try {
-    const hashedPassword = await User.hashPassword(patient.password);
+    /*const hashedPassword = await User.hashPassword(patient.password);
     const newUser = new User({ local: {
       email: patient.email,
       password: hashedPassword
     },
     role:"patient"
     })
-    newUser.save();
+       newUser.save();*/
     const newPatient = new Patient({
-      _id:newUser._id,
-      username: patient.username,
+      // _id:newUser._id,
+      
       nom: patient.nom,
       prenom: patient.prénom,
-      num_secu: patient.num_secu,
+      numeroSecurite: patient.numero_secu,
+      email: patient.email,
+      telephone:patient.num_tele,
       adresse: patient.adresse,
-      localisation:"indefined",
+      hopital:patient.adresse1,
+      date:patient.date,
+      heure:patient.heure,
+      imediate:false
+
       
     })
     newPatient.save();

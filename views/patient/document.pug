@@ -1,0 +1,43 @@
+extends ../layout
+block content
+ 
+ nav
+  div(class="nav-wrapper white" style="height:100px !important;")
+    a(href="/" class="brand-logo")
+      img( src="/images/Capture.PNG" height="100")
+    ul(id="nav-mobile" class="right hide-on-med-and-down")  
+     li
+      a(style="color:black" class="waves-effect waves-light btn-large  amber darken-3" href="/patient/signupPatient/form") Réserver votre taxi 
+     li
+      a(style="color:black"  href="/auth/signin/form"  class="waves-effect waves-light btn-large  amber darken-3") Document à fournir
+     li
+      a(style="color:black" class="waves-effect waves-light btn-large  amber darken-3" href="/contact") Contact
+     
+ div(class="row" style="background:white;")
+  
+  div(class="row") 
+  div(class="row")               
+  div(class="col s4 offset-s4" style="text-align: center;color:white;background:#FF5733 ;height:120px;border-radius:20px;font-size:30px;") +33 6 52 68 01 06
+   i(class=" large material-icons left ") call
+   div(style="text-decoration: underline;font-size:25px;text-align: center")  Numéro non surtaxé   
+ div(class="aa")
+  div(class="row")
+  div(class="row")
+  div(class="row")
+
+  div(class="row" )
+   div(class="container col s10 offset-s1 " style="background-color:white;color:black;float: left;z-index:0;border-radius:20px;padding:3rem" ) 
+    h1 Comment bénéficier du Tiers Payant?
+  
+    p(style="font-size:25px;") Donnez au chauffeur de taxi conventionné votre prescription médicale de transport. Volet sur lequel est indiqué « à adresser à l’organisme ».
+    p(style="font-size:25px;") Présentez-lui votre attestation de droit de l’organisme dont vous dépendez. Ces deux documents doivent indiquer le même taux de prise en charge.
+    div(class="row")
+     div(class="col s6")
+      h1 Documents à fournir pour la prise en charge de votre transport
+      ul(style="font-size:25px;")
+       li(style="list-style-type: square;") Votre prescription médicale de transport
+       li(style="list-style-type: square;") Votre carte Vitale
+       li(style="list-style-type: square;") Votre attestation de droits à jour
+      p(style="font-size:25px;") Pour bénéficier de la prise en charge par l’Assurance Maladie et de la dispense d’avance des frais, vous devrez impérativement présenter au chauffeur de taxi ces documents.
+      p(style="font-size:25px;") Votre taxi conventionné télétransmettra directement les informations à l’Assurance Maladie et le remboursement sera effectué au taxi.
+     img(src="/images/document.jpg" class="col s6" height="600em")

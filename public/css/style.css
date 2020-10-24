@@ -7,7 +7,7 @@ html {
     font-size: 62.5%;
 }
 
-body{
+#aa{
     height: 96vh;
     background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     background-size: cover;
@@ -129,6 +129,12 @@ body{
     font-size: 1.6rem;
     color: white;    
 }
+body {
+    background-image:url(/images/taxii.jpg);
+    background-repeat: repeat;
+    background-size: 100%;
+  }
+
 
 .footer a{
     font-size: 1.6rem;
@@ -136,6 +142,8 @@ body{
     text-decoration: none;    
 }
 
+#container{border:2px solid black;}
+#docs{border:2px solid black;}
 /* Animations */
 @keyframes moveIn {
     0% {

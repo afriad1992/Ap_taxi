@@ -1,4 +1,46 @@
+/* label color */
+.input-field label {
+  color: #000;
+  font-size: 30px;
+  
+  
+}
+.container-map{
+  width: 100%;
+  height: 30rem;
+  margin: 1rem auto;
+}
 
+.marge{margin-left:6rem !important;}
+.input[type=text]{position:relative;
+  font-size: 30px;
+  margin-left: 10rem !important;}
+/* label focus color */
+.input-field input[type=text]:focus + label {
+  color: #000;
+
+  
+}
+/* label underline focus color */
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000;
+}
+/* valid color */
+.input-field input[type=text].valid {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000;
+}
+/* invalid color */
+.input-field input[type=text].invalid {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000;
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+  color: #000;
+}
+     
   .content{
     max-width: 1000px;
     margin-top:20px;
@@ -8,10 +50,14 @@
     width:30%;
     max-width:300px;
   }
-
- body {
+  .bb {
+    background-image:url(/images/malade.jpg);
+    background-repeat: repeat;
+    background-size: 100%;
+  }
+ .aa {
     background-image:url(/images/taxii.jpg);
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: 100%;
   }
 

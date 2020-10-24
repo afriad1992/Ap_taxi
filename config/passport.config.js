@@ -1,4 +1,4 @@
-const app = require('../app');
+const {app} = require('../app');
 const passport = require('passport');
 const Taxi= require('../database/models/user.model');
 const LocalStrategy = require('passport-local').Strategy;

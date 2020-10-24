@@ -9,35 +9,48 @@ block content
       a(style="color:black" href="/tchats/new"  class="waves-effect waves-light btn  amber darken-3") Tchat
      li
       a(style="color:black" href="/auth/signout"  class="waves-effect waves-light btn  amber darken-3") Déconnexion       
- .container 
+ 
+ container  
+  
+  
+    
    div(class="row")
-   div(class="row col s6 offset-m5")  
-    form(id="docs" class="card w-50 mt-5" method="post" action="/malade/course" )
-      div
-       img(class="responsive-img circle  col s4 offset-s4" src="/images/taxii.jpg"  height="150em" width="150em") 
-       p(class=" col s4 offset-s4 center" style="font-weight:bold;font-size:20px;") #{users}   
-      div(class="card-content")
-       div(class="row")
-        div(class="input-field col s12")
-          i(class="material-icons prefix") place
-          input(placeholder="Placeholder" id="adresse" type="text" class="validate" name="adresse" v-model="nom" v-on:blur="verifnom()" )
-          label point de depart 
-          span(style="color:red;") 
-        div(class="input-field col s12")
-          i(class="material-icons prefix") place
-          input(placeholder="Placeholder" id="adresse" type="text" class="validate" name="adresse1" v-model="nom" v-on:blur="verifnom()" )
-          label point d'arrivée 
-          span(style="color:red;") 
-        div(class="input-field col s12")
-          i(class="material-icons prefix") date_range
-          input(placeholder="Placeholder" id="adresse" type="text" class="validate" name="adresse1" v-model="nom" v-on:blur="verifnom()" )
-          label Rendez vous
-          span(style="color:red;") 
+   div(class="row ")  
+    form(id="docs" class="col s12" class="card " method="post" action="/malade/course" )
+      div(class="row")
+      div(class="row")
+      div(class="row")
+       div(class="col s3" style="border-right: 2mm ridge grey;")
+        img(class="responsive-img circle  col s8 offset-s2 " src="/images/taxii.jpg"  height="10em" width="40em") 
+        p(class="col s12 center" id="nomch" style="font-weight:bold;font-size:20px;" nom=users.nom)= users.nom   
+        span( id="numT" style="display:none" numeroTaxi=users.num_taxi)
+        //- ul(class="hide-on-med-and-down right")
+          li(a class=" dropdown-trigger grey-text text-darken-2 " id="ep"data-target='drop'><i class="material-icons left icon1"  >arrow_forward</i> Mon compte ou s'inscrire </a></li>
+                            <li><a class=" grey-text text-darken-2 " style=";"><i class="material-icons left icon1"  >visibility</i>Articles vues(0)  </a></li>
+                            <li><a class=" grey-text text-darken-2" style=";"><i class="material-icons left icon1"  >assignment_ind</i> Mon compte </a></li>    
+                        </ul>
+
+        
+     
+        p Calendrier
+         i(class="material-icons left") date_range
+        
+        p Courses medicale
+         i(class="material-icons left") directions_car
+        
+        p Courses passagers
+         i(class="material-icons left") directions_car
+       div(class="card-content col s9")
+        p(class="center" style="font-weight:bold;font-size:3em;") Calendrier
+        
          
         if errors
           ul(class="my-2")
             each error in errors
               li(class="text-danger")= error
         div(class="w-100 col s12")
-          input(type="submit" value="valider" class="btn btn-large col s4 offset-s4 ml-auto d-block")
-   
+          //- input(type="submit" value="valider" class="btn btn-large col s4 offset-s4 ml-auto d-block") 
+ script(src="/socket.io/socket.io.js")  
+ script(src="/javascripts/index.js")
+ 
+//-  script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")

@@ -1,14 +1,14 @@
 extends ../layout
 block content
  nav
-  div(class="nav-wrapper white" style="height:70px !important")
+  div(class="nav-wrapper white" style="height:100px !important")
     a(href="/" class="brand-logo")
-      img( src="/images/Capture.PNG" height="70")
+      img( src="/images/Capture.PNG" height="100")
     ul(id="nav-mobile" class="right hide-on-med-and-down")  
      li
-      a(style="color:black" class="waves-effect waves-light btn  amber darken-3" href="#") Inscription 
+      a(style="color:black" class="waves-effect waves-light btn-large  amber darken-3" href="users/signup/form") Inscription 
      li
-      a(style="color:black"  href="/auth/signin/form"  class="waves-effect waves-light btn  amber darken-3") Connexion 
+      a(style="color:black"  href="/auth/signin/form"  class="waves-effect waves-light btn-large  amber darken-3") Connexion 
  .container
   div(class="row")
   div(class="row")
@@ -19,31 +19,37 @@ block content
       div(class="card-content")
        div(class="row")
         div(class="input-field col s6")
+          div(class="row")
           i(class="material-icons prefix") account_circle
           input(placeholder="Placeholder" id="last_name" type="text" class="validate" name="nom" v-model="nom" v-on:blur="verifnom()" )
           label  Nom
           span(style="color:red;") 
         div(class="input-field col s6")
+          div(class="row")
           i(class="material-icons prefix") account_circle
           input(placeholder="Placeholder" id="first_name" type="text" class="validate" name="prénom" v-model="nom" v-on:blur="verifnom()" )
           label Prénom
           span(style="color:red;") 
         div(class="input-field col s12")
+          div(class="row")
           i(class="material-icons prefix") account_circle
           input(placeholder="Placeholder" id="user_name" type="text" class="validate" name="username" v-model="nom" v-on:blur="verifnom()" )
           label Username
           span(style="color:red;") 
         div(class="input-field col s12")
+          div(class="row")
           i(class="material-icons prefix") contact_mail
           input(placeholder="Placeholder" id="mail" type="email" class="validate" name="email" v-model="nom" v-on:blur="verifnom()" )
           label  Email
           span(style="color:red;")
         div(class="input-field col s6")
+          div(class="row")
           i(class="material-icons prefix") lock
           input(placeholder="Placeholder" id="passe2" type="password" class="validate" name="password" v-model="nom" v-on:blur="verifnom()" )
           label Mot de passe 
           span(style="color:red;") 
         div(class="input-field col s6")
+          div(class="row")
           i(class="material-icons prefix") lock
           input(placeholder="Placeholder" id="passe2" type="password" class="validate" name="password2" v-model="nom" v-on:blur="verifnom()" )
           label confirmez votre mot de passe 
